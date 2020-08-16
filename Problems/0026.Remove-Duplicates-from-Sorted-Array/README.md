@@ -23,3 +23,10 @@ Your function should return length = 5, with the first five elements of nums bei
 
 It doesn't matter what values are set beyond the returned length.
 ```
+
+##　解題思路
+
+使用兩個 pointer:
+
+1. 歷遍元素
+2. 按條件賦值並前進
