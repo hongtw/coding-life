@@ -23,11 +23,32 @@ capitalized_dash_name, camelName = parse_problem_name(args.url)
 new_folder = PROBLEMS_FOLDER / f"{args.num:0>4}.{capitalized_dash_name}"
 new_folder.mkdir(exist_ok=True)
 (new_folder / f"{camelName}.py").touch()
-(new_folder / f"{camelName}_test.py").touch()
+pytest_file = (new_folder / f"{camelName}_test.py")
+pytest_file.touch()
+if pytest_file.stat().st_size == 0:
+    pytest_file.write_text(
+f"""
+from {camelName} import Solution
+import pytest
+from copy import deepcopy
+
+SOL = Solution()
+
+TEST_SUITS =  []
+
+@pytest.mark.parametrize(
+    "nums, ans", 
+    deepcopy(TEST_SUITS)
+)
+def test(nums, ans):
+    assert SOL.func(nums) == ans
+    """
+    )
 (new_folder / f"{camelName}.go").touch()
 (new_folder / f"{camelName}_test.go").touch()
 readme = new_folder / f"README.md"
 readme.touch()
-readme.write_text(
-    f"# [{args.num}. {capitalized_dash_name.replace('-', ' ')}]({args.url})\n"
-)
+if readme.stat().st_size == 0:
+    readme.write_text(
+        f"# [{args.num}. {capitalized_dash_name.replace('-', ' ')}]({args.url})\n"
+    )
