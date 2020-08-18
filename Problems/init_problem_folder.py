@@ -44,7 +44,11 @@ def test(nums, ans):
     assert SOL.func(nums) == ans
     """
     )
-(new_folder / f"{camelName}.go").touch()
+go_file = (new_folder / f"{camelName}.go")
+go_file.touch()
+if go_file.stat().st_size == 0:
+    go_file.write_text("package leetcode\n")
+
 (new_folder / f"{camelName}_test.go").touch()
 readme = new_folder / f"README.md"
 readme.touch()
