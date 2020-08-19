@@ -15,3 +15,19 @@ func maxSubArray(nums []int) int {
 	}
 	return maxsum
 }
+
+func maxSubArrayV2(nums []int) int {
+	maxsum := nums[0]
+	subsum := 0
+	for _, n := range nums {
+		if subsum+n > n {
+			subsum += n
+		} else {
+			subsum = n
+		}
+		if subsum > maxsum {
+			maxsum = subsum
+		}
+	}
+	return maxsum
+}

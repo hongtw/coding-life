@@ -20,5 +20,10 @@ func Test(t *testing.T) {
 		if got != test.ans {
 			t.Errorf("[%v] expect '%v', got '%v' ", test.name, test.ans, got)
 		}
+
+		got = maxSubArrayV2(test.nums)
+		if got != test.ans {
+			t.Errorf("[%v] expect '%v', got '%v' ", test.name, test.ans, got)
+		}
 	}
 }
