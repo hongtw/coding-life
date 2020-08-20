@@ -56,7 +56,7 @@ def test(nums, ans):
 go_file = (new_folder / f"{camelName}.go")
 go_file.touch()
 if go_file.stat().st_size == 0:
-    go_file.write_text("package leetcode\n")
+    go_file.write_text("package leetcode\n\n")
 
 gotest_file = (new_folder / f"{camelName}_test.go")
 gotest_file.touch()
@@ -84,6 +84,9 @@ func Test(t *testing.T) {
 		if got != test.ans {
 			t.Errorf("[%v] expect '%v', got '%v' ", test.name, test.ans, got)
 		}
+        // if !reflect.DeepEqual(test.nums, test.ans) {
+		// 	t.Errorf("[%v] expect '%v', got '%v' ", test.name, test.ans, test.nums)
+		// }
 	}
 }
 """, encoding='utf8')
