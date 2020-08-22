@@ -7,8 +7,7 @@ leetcode practices
 - https://books.halfrost.com/leetcode/
 
 ## Array Progress
-
-- [1. Two Sum](https://github.com/hongtw/leetcode/tree/master/Problems/0001.Two-Sum) :sunglasses:
+-  [1. Two Sum](https://github.com/hongtw/leetcode/tree/master/Problems/0001.Two-Sum) :sunglasses: <span style="background:#5CB85C;border-radius:20%;padding: 1px 5px 1px 5px"> Easy </span>
 - [11. Container With Most Water](https://github.com/hongtw/leetcode/tree/master/Problems/0011.Container-With-Most-Water) :dizzy_face:
 - [15. 3Sum](https://github.com/hongtw/leetcode/tree/master/Problems/0015.3sum) :dizzy_face:
 - [26. Remove Duplicates from Sorted Array](https://github.com/hongtw/leetcode/tree/master/Problems/0026.Remove-Duplicates-from-Sorted-Array) :sunglasses:
