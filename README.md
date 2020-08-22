@@ -13,6 +13,7 @@ leetcode practices
 - [15. 3Sum](https://github.com/hongtw/leetcode/tree/master/Problems/0015.3sum) :dizzy_face:
 - [26. Remove Duplicates from Sorted Array](https://github.com/hongtw/leetcode/tree/master/Problems/0026.Remove-Duplicates-from-Sorted-Array) :sunglasses:
 - [27. Remove Element](https://github.com/hongtw/leetcode/tree/master/Problems/0027.Remove-Element) :sunglasses:
+- [41. First Missing Positive](https://github.com/hongtw/leetcode/tree/master/Problems/0041.First-Missing-Positive) :smiling_imp:
 - [53. Maximum Subarray](https://github.com/hongtw/leetcode/tree/master/Problems/0053.Maximum-Subarray) :sunglasses:
 - [88. Merge Sorted Array](https://github.com/hongtw/leetcode/tree/master/Problems/0088.Merge-Sorted-Array) :sunglasses:
 - [121. Best Time To Buy And Sell Stock](https://github.com/hongtw/leetcode/tree/master/Problems/0121.Best-Time-To-Buy-And-Sell-Stock) :sunglasses:
