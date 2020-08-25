@@ -8,7 +8,7 @@ leetcode practices
 
 ## Array Progress
 
-![](https://img.shields.io/badge/-Easy-5CB85C.svg)
+![Easy](https://img.shields.io/badge/-Easy-5CB85C.svg)
 
 - [1. Two Sum](https://github.com/hongtw/leetcode/tree/master/Problems/0001.Two-Sum)
 - [26. Remove Duplicates from Sorted Array](https://github.com/hongtw/leetcode/tree/master/Problems/0026.Remove-Duplicates-from-Sorted-Array)

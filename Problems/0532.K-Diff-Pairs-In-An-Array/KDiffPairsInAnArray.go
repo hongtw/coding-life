@@ -1,7 +1,7 @@
 package leetcode
 
 
-// Runtime: 16 ms, faster than 98.98% of Go online submissions
+// Runtime: 12 ms, faster than 100.00% of Go online submissions for K-diff Pairs in an Array.
 func findPairs(nums []int, k int) int {
 	res := 0
 	if k < 0 {return res}
@@ -17,12 +17,7 @@ func findPairs(nums []int, k int) int {
 			}
 		}
 	} else {
-		keys := make([]int, 0, len(counter))
 		for key := range counter {
-			keys = append(keys, key)
-		}
-		sort.Ints(keys)
-		for _, key := range keys {
 			if _, isOK := counter[key + k]; isOK {
 				res++
 			}
