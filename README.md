@@ -21,6 +21,7 @@ leetcode practices
 - [217. Contains Duplicate](https://github.com/hongtw/leetcode/tree/master/Problems/0217.Contains-Duplicate)
 - [219. Contains Duplicate II](https://github.com/hongtw/leetcode/tree/master/Problems/0219.Contains-Duplicate-II)
 - [283. Move Zeroes](https://github.com/hongtw/leetcode/tree/master/Problems/0283.Move-Zeroes)
+- [287. Find The Duplicate Number](https://github.com/hongtw/leetcode/tree/master/Problems/0287.Find-The-Duplicate-Number)
 - [532. K Diff Pairs In An Array](https://github.com/hongtw/leetcode/tree/master/Problems/0532.K-Diff-Pairs-In-An-Array)
 
 ![Medium](https://img.shields.io/badge/-Medium-F0AD4E.svg)
