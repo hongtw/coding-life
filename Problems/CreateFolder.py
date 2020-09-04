@@ -58,39 +58,6 @@ go_file.touch()
 if go_file.stat().st_size == 0:
     go_file.write_text("package leetcode\n\n")
 
-gotest_file = (new_folder / f"{camelName}_test.go")
-gotest_file.touch()
-gotest_file.write_text(
-"""
-package leetcode
-
-import (
-	"testing"
-)
-
-func Test(t *testing.T) {
-	testSuits := []struct {
-		name string
-		nums []int
-		ans  int
-	}{
-		{"Example 1", []int{-2, 1, -3, 4, -1, 2, 1, -5, 4}, 6},
-		{"Example 2", []int{-1}, -1},
-	}
-
-	for _, test := range testSuits {
-		got := maxSubArray(test.nums)
-
-		if got != test.ans {
-			t.Errorf("[%v] expect '%v', got '%v' ", test.name, test.ans, got)
-		}
-        // if !reflect.DeepEqual(test.nums, test.ans) {
-		// 	t.Errorf("[%v] expect '%v', got '%v' ", test.name, test.ans, test.nums)
-		// }
-	}
-}
-""", encoding='utf8')
-
 readme = new_folder / f"README.md"
 readme.touch()
 if readme.stat().st_size == 0:
