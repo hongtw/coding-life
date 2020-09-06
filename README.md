@@ -6,9 +6,13 @@ leetcode practices
 
 - https://books.halfrost.com/leetcode/
 
+## Partner
+
+- https://github.com/hjcian/leetcode
+
 ## Array Progress
 
-![Easy](https://img.shields.io/badge/-Easy-5CB85C.svg)
+![Easy](https://img.shields.io/badge/LeetCode-Easy-5CB85C.svg)
 
 - [1. Two Sum](https://github.com/hongtw/leetcode/tree/master/Problems/0001.Two-Sum)
 - [26. Remove Duplicates from Sorted Array](https://github.com/hongtw/leetcode/tree/master/Problems/0026.Remove-Duplicates-from-Sorted-Array)
@@ -26,7 +30,7 @@ leetcode practices
 - [566. Reshape The Matrix](https://github.com/hongtw/leetcode/tree/master/Problems/0566.Reshape-The-Matrix)
 - [628. Maximum Product Of Three Numbers](https://github.com/hongtw/leetcode/tree/master/Problems/0628.Maximum-Product-Of-Three-Numbers)
 
-![Medium](https://img.shields.io/badge/-Medium-F0AD4E.svg)
+![Medium](https://img.shields.io/badge/LeetCode-Medium-F0AD4E.svg)
 
 - [11. Container With Most Water](https://github.com/hongtw/leetcode/tree/master/Problems/0011.Container-With-Most-Water)
 - [15. 3Sum](https://github.com/hongtw/leetcode/tree/master/Problems/0015.3sum)
@@ -34,6 +38,6 @@ leetcode practices
 - [75. Sort Colors](https://github.com/hongtw/leetcode/tree/master/Problems/0075.Sort-Colors)
 - [78. Subsets](https://github.com/hongtw/leetcode/tree/master/Problems/0078.Subsets)
 
-![Hard](https://img.shields.io/badge/-Hard-D9534F.svg)
+![Hard](https://img.shields.io/badge/LeetCode-Hard-D9534F.svg)
 
 - [41. First Missing Positive](https://github.com/hongtw/leetcode/tree/master/Problems/0041.First-Missing-Positive)
