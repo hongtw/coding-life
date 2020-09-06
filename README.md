@@ -24,6 +24,7 @@ leetcode practices
 - [287. Find The Duplicate Number](https://github.com/hongtw/leetcode/tree/master/Problems/0287.Find-The-Duplicate-Number)
 - [532. K Diff Pairs In An Array](https://github.com/hongtw/leetcode/tree/master/Problems/0532.K-Diff-Pairs-In-An-Array)
 - [566. Reshape The Matrix](https://github.com/hongtw/leetcode/tree/master/Problems/0566.Reshape-The-Matrix)
+- [628. Maximum Product Of Three Numbers](https://github.com/hongtw/leetcode/tree/master/Problems/0628.Maximum-Product-Of-Three-Numbers)
 
 ![Medium](https://img.shields.io/badge/-Medium-F0AD4E.svg)
 
