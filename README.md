@@ -32,17 +32,16 @@ leetcode practices
 - [628. Maximum Product Of Three Numbers](https://github.com/hongtw/leetcode/tree/master/Problems/0628.Maximum-Product-Of-Three-Numbers)
 
 ![Medium](https://img.shields.io/badge/LeetCode-Medium-F0AD4E.svg)
-![](https://img.shields.io/badge/Done-5-blue)
-
+![](https://img.shields.io/badge/Done-6-blue)
 
 - [11. Container With Most Water](https://github.com/hongtw/leetcode/tree/master/Problems/0011.Container-With-Most-Water)
 - [15. 3Sum](https://github.com/hongtw/leetcode/tree/master/Problems/0015.3sum)
 - [16. 3sum Closest](https://github.com/hongtw/leetcode/tree/master/Problems/0016.3sum-Closest)
+- [39. Combination Sum](https://github.com/hongtw/leetcode/tree/master/Problems/0039.Combination-Sum)
 - [75. Sort Colors](https://github.com/hongtw/leetcode/tree/master/Problems/0075.Sort-Colors)
 - [78. Subsets](https://github.com/hongtw/leetcode/tree/master/Problems/0078.Subsets)
 
 ![Hard](https://img.shields.io/badge/LeetCode-Hard-D9534F.svg)
 ![](https://img.shields.io/badge/Done-1-blue)
-
 
 - [41. First Missing Positive](https://github.com/hongtw/leetcode/tree/master/Problems/0041.First-Missing-Positive)
