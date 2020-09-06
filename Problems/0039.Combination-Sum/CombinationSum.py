@@ -17,7 +17,7 @@ class Solution:
         print("====", candidates, target, res)
         return res
 
-    # Runtime: 48 ms, faster than 96.82% of Python3 online submissions for Combination Sum.
+    # Runtime: 56 ms, faster than 87.55% of Python3 online submissions for Combination Sum.
     def combinationSumV2(self, candidates: List[int], target: int) -> List[List[int]]:
         def combinHelper(candidates, target, prefixRes):
             for i, n in enumerate(candidates):
@@ -27,4 +27,16 @@ class Solution:
                     combinHelper(candidates[i:], target - n, prefixRes + [n])
         res = []
         combinHelper(candidates, target, [])
+        return res
+
+    # Runtime: 48 ms, faster than 96.82% of Python3 online submissions for Combination Sum.
+    def combinationSumV3(self, candidates: List[int], target: int) -> List[List[int]]:
+        def combinHelper(candidates, target, prefixRes, res):
+            for i, n in enumerate(candidates):
+                if n == target:
+                    res.append(prefixRes + [n])
+                elif n < target:
+                    combinHelper(candidates[i:], target - n, prefixRes + [n], res)
+        res = []
+        combinHelper(candidates, target, [], res)
         return res
