@@ -31,16 +31,27 @@ class Solution:
             res.append([0, 0, 0])
         return res
 
+    # Runtime: 944 ms, faster than 64.05% of Python3 online submissions for 3Sum.
     def threeSumV2(self, nums: List[int]) -> List[List[int]]:
+        res = []
         nums.sort()
-        counter = {}
-        for n in nums:
-            counter[n] = counter.get(n, 0) + 1
-
         length = len(nums)
-        for i in range(length - 2):
-            fst = nums[i]
-            sec = nums[i + 1]
-            
-            for j in range(i+2, length-1):
-                nums[i]
+        i = 0
+        while i < length:
+            j = i + 1
+            k = length - 1
+            while j < k:
+                sum_ = nums[i] + nums[j] + nums[k]
+                if  sum_ == 0:
+                    res.append([nums[i], nums[j], nums[k]])
+                    while j + 1 < length and j < k and nums[j] == nums[j+1]:
+                        j += 1
+                    j += 1
+                elif  sum_ > 0:
+                    k -= 1
+                else:
+                    j += 1
+            while i + 1 < length and nums[i] == nums[i+1]:
+                i += 1
+            i += 1
+        return res

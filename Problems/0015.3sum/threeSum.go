@@ -36,3 +36,31 @@ func threeSum(nums []int) [][]int {
 	}
 	return res
 }
+
+// Runtime: 28 ms, faster than 94.38% of Go online submissions
+func threeSumV2(nums []int) [][]int {
+	res := [][]int{}
+	sort.Ints(nums)
+	length := len(nums)
+
+	for i := 0; i < length; i++ {
+		for j, k := i+1, length-1; j < k; {
+			sum := nums[i] + nums[j] + nums[k]
+			if sum > 0 {
+				k--
+			} else if sum == 0 {
+				res = append(res, []int{nums[i], nums[j], nums[k]})
+				for j+1 < length && j < k && nums[j] == nums[j+1] {
+					j++
+				}
+				j++
+			} else {
+				j++
+			}
+		}
+		for i+1 < length && nums[i] == nums[i+1] {
+			i++
+		}
+	}
+	return res
+}
