@@ -1,5 +1,6 @@
 package leetcode
 
+// Runtime: 0 ms, faster than 100.00% of Go online submissions for Fibonacci Number.
 func fib(N int) int {
 	if N == 1 || N == 2 {
 		return 1

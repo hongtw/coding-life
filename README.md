@@ -5,12 +5,13 @@ leetcode practices
 ## 參考
 
 - https://books.halfrost.com/leetcode/
+- https://github.com/labuladong/fucking-algorithm
 
 ## Partner
 
 - https://github.com/hjcian/leetcode
 
-## Array Progress
+## Leetcode Progress
 
 ![Easy](https://img.shields.io/badge/LeetCode-Easy-5CB85C.svg)
 ![](https://img.shields.io/badge/Done-15-blue)
@@ -27,6 +28,8 @@ leetcode practices
 - [219. Contains Duplicate II](https://github.com/hongtw/leetcode/tree/master/Problems/0219.Contains-Duplicate-II)
 - [283. Move Zeroes](https://github.com/hongtw/leetcode/tree/master/Problems/0283.Move-Zeroes)
 - [287. Find The Duplicate Number](https://github.com/hongtw/leetcode/tree/master/Problems/0287.Find-The-Duplicate-Number)
+- [322. Coin Change](https://github.com/hongtw/leetcode/tree/master/Problems/0322.Coin-Change)
+- [509. Fibonacci Number](https://github.com/hongtw/leetcode/tree/master/Problems/0509.Fibonacci-Number)
 - [532. K Diff Pairs In An Array](https://github.com/hongtw/leetcode/tree/master/Problems/0532.K-Diff-Pairs-In-An-Array)
 - [566. Reshape The Matrix](https://github.com/hongtw/leetcode/tree/master/Problems/0566.Reshape-The-Matrix)
 - [628. Maximum Product Of Three Numbers](https://github.com/hongtw/leetcode/tree/master/Problems/0628.Maximum-Product-Of-Three-Numbers)
