@@ -2,4 +2,4 @@
 
 ## 解題思路
 
-[Check](https://github.com/hongtw/leetcode/tree/master/Problems/1143.Longest-Common-Subsequence)
+[Check](https://github.com/hongtw/leetcode/tree/master/leetcode/1143.Longest-Common-Subsequence)
