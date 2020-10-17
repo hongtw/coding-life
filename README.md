@@ -14,7 +14,7 @@ leetcode practices
 ## Leetcode Progress
 
 ![Easy](https://img.shields.io/badge/LeetCode-Easy-5CB85C.svg)
-![](https://img.shields.io/badge/Done-15-blue)
+![](https://img.shields.io/badge/Done-16-blue)
 
 - [1. Two Sum](https://github.com/hongtw/leetcode/tree/master/Problems/0001.Two-Sum)
 - [26. Remove Duplicates from Sorted Array](https://github.com/hongtw/leetcode/tree/master/Problems/0026.Remove-Duplicates-from-Sorted-Array)
@@ -28,14 +28,13 @@ leetcode practices
 - [219. Contains Duplicate II](https://github.com/hongtw/leetcode/tree/master/Problems/0219.Contains-Duplicate-II)
 - [283. Move Zeroes](https://github.com/hongtw/leetcode/tree/master/Problems/0283.Move-Zeroes)
 - [287. Find The Duplicate Number](https://github.com/hongtw/leetcode/tree/master/Problems/0287.Find-The-Duplicate-Number)
-- [322. Coin Change](https://github.com/hongtw/leetcode/tree/master/Problems/0322.Coin-Change)
 - [509. Fibonacci Number](https://github.com/hongtw/leetcode/tree/master/Problems/0509.Fibonacci-Number)
 - [532. K Diff Pairs In An Array](https://github.com/hongtw/leetcode/tree/master/Problems/0532.K-Diff-Pairs-In-An-Array)
 - [566. Reshape The Matrix](https://github.com/hongtw/leetcode/tree/master/Problems/0566.Reshape-The-Matrix)
 - [628. Maximum Product Of Three Numbers](https://github.com/hongtw/leetcode/tree/master/Problems/0628.Maximum-Product-Of-Three-Numbers)
 
 ![Medium](https://img.shields.io/badge/LeetCode-Medium-F0AD4E.svg)
-![](https://img.shields.io/badge/Done-8-blue)
+![](https://img.shields.io/badge/Done-10-blue)
 
 - [11. Container With Most Water](https://github.com/hongtw/leetcode/tree/master/Problems/0011.Container-With-Most-Water)
 - [15. 3Sum](https://github.com/hongtw/leetcode/tree/master/Problems/0015.3sum)
@@ -45,6 +44,8 @@ leetcode practices
 - [62. Unique Paths](https://github.com/hongtw/leetcode/tree/master/Problems/0062.Unique-Paths)
 - [75. Sort Colors](https://github.com/hongtw/leetcode/tree/master/Problems/0075.Sort-Colors)
 - [78. Subsets](https://github.com/hongtw/leetcode/tree/master/Problems/0078.Subsets)
+- [322. Coin Change](https://github.com/hongtw/leetcode/tree/master/Problems/0322.Coin-Change)
+- [1143. Longest Common Subsequence](https://github.com/hongtw/leetcode/tree/master/Problems/1143.Longest-Common-Subsequence)
 
 ![Hard](https://img.shields.io/badge/LeetCode-Hard-D9534F.svg)
 ![](https://img.shields.io/badge/Done-1-blue)
