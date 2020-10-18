@@ -67,6 +67,6 @@ if __name__ == "__main__":
     x = "abcs"
     y = "sabc"
     print(lcs(x, y))
-    print(lcs_hjcain(x, y))
+    print(lcs_hjcain(x, y), lcs_hjcain(y, x))
 
     benchmark()
