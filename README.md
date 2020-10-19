@@ -38,7 +38,7 @@ leetcode practices
 - [628. Maximum Product Of Three Numbers](https://github.com/hongtw/leetcode/tree/master/leetcode/0628.Maximum-Product-Of-Three-Numbers)
 
 ![Medium](https://img.shields.io/badge/LeetCode-Medium-F0AD4E.svg)
-![](https://img.shields.io/badge/Done-10-blue)
+![](https://img.shields.io/badge/Done-11-blue)
 
 - [11. Container With Most Water](https://github.com/hongtw/leetcode/tree/master/leetcode/0011.Container-With-Most-Water)
 - [15. 3Sum](https://github.com/hongtw/leetcode/tree/master/leetcode/0015.3sum)
@@ -49,6 +49,7 @@ leetcode practices
 - [75. Sort Colors](https://github.com/hongtw/leetcode/tree/master/leetcode/0075.Sort-Colors)
 - [78. Subsets](https://github.com/hongtw/leetcode/tree/master/leetcode/0078.Subsets)
 - [322. Coin Change](https://github.com/hongtw/leetcode/tree/master/leetcode/0322.Coin-Change) ![DP](https://img.shields.io/badge/DP-9F88FF.svg?style=plastic)
+- [516. Longest Palindromic Subsequence](https://github.com/hongtw/coding-life/tree/master/leetcode/0516.Longest-Palindromic-Subsequence) ![DP](https://img.shields.io/badge/DP-9F88FF.svg?style=plastic)
 - [1143. Longest Common Subsequence](https://github.com/hongtw/leetcode/tree/master/leetcode/1143.Longest-Common-Subsequence) ![DP](https://img.shields.io/badge/DP-9F88FF.svg?style=plastic)
 
 ![Hard](https://img.shields.io/badge/LeetCode-Hard-D9534F.svg)

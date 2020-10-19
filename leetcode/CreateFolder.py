@@ -56,7 +56,7 @@ def test(nums, ans):
 go_file = (new_folder / f"{camelName}.go")
 go_file.touch()
 if go_file.stat().st_size == 0:
-    go_file.write_text("package leetcode\n\n")
+    go_file.write_text("package main\n\n")
 
 readme = new_folder / f"README.md"
 readme.touch()
@@ -69,4 +69,4 @@ project_readme = PROBLEMS_FOLDER.parent / 'README.md'
 content = project_readme.read_text(encoding='utf8')
 if args.url not in content:
     with project_readme.open('a', encoding='utf8') as f:
-        f.write(f"- [{args.num.strip('0')}. {capitalized_space_name}](https://github.com/hongtw/leetcode/tree/master/Problems/{args.num:0>4}.{capitalized_dash_name})")
+        f.write(f"- [{args.num.strip('0')}. {capitalized_space_name}](https://github.com/hongtw/coding-life/tree/master/leetcode/{args.num:0>4}.{capitalized_dash_name})")
