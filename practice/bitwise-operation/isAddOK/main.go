@@ -13,12 +13,8 @@ func isAddOK(x, y int64) bool {
 
 	isPosOK := (pos>>63)&1 ^ 1
 	isNegOK := ((((xSign + ySign) - (neg>>63)&1) ^ 3) >> 1) & 1
-	isOK := isPosOK & isNegOK
 
-	if isOK == 1 {
-		return true
-	}
-	return false
+	return (isPosOK & isNegOK) == 1
 }
 
 func main() {
