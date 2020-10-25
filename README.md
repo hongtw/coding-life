@@ -17,7 +17,7 @@ leetcode practices
 
 ## Leetcode
 
-![Easy](https://img.shields.io/badge/LeetCode-Easy-5CB85C.svg)
+![Easy](leetcode/img/easy.svg)
 ![](https://img.shields.io/badge/Done-16-blue)
 
 - [1. Two Sum](https://github.com/hongtw/leetcode/tree/master/leetcode/0001.Two-Sum)
@@ -37,7 +37,7 @@ leetcode practices
 - [566. Reshape The Matrix](https://github.com/hongtw/leetcode/tree/master/leetcode/0566.Reshape-The-Matrix)
 - [628. Maximum Product Of Three Numbers](https://github.com/hongtw/leetcode/tree/master/leetcode/0628.Maximum-Product-Of-Three-Numbers)
 
-![Medium](https://img.shields.io/badge/LeetCode-Medium-F0AD4E.svg)
+![Medium](leetcode/img/medium.svg)
 ![](https://img.shields.io/badge/Done-11-blue)
 
 - [11. Container With Most Water](https://github.com/hongtw/leetcode/tree/master/leetcode/0011.Container-With-Most-Water)
@@ -48,12 +48,12 @@ leetcode practices
 - [62. Unique Paths](https://github.com/hongtw/leetcode/tree/master/leetcode/0062.Unique-Paths)
 - [75. Sort Colors](https://github.com/hongtw/leetcode/tree/master/leetcode/0075.Sort-Colors)
 - [78. Subsets](https://github.com/hongtw/leetcode/tree/master/leetcode/0078.Subsets)
-- [322. Coin Change](https://github.com/hongtw/leetcode/tree/master/leetcode/0322.Coin-Change) ![DP](https://img.shields.io/badge/DP-9F88FF.svg?style=plastic)
-- [516. Longest Palindromic Subsequence](https://github.com/hongtw/coding-life/tree/master/leetcode/0516.Longest-Palindromic-Subsequence) ![DP](https://img.shields.io/badge/DP-9F88FF.svg?style=plastic)
-- [1143. Longest Common Subsequence](https://github.com/hongtw/leetcode/tree/master/leetcode/1143.Longest-Common-Subsequence) ![DP](https://img.shields.io/badge/DP-9F88FF.svg?style=plastic)
+- [322. Coin Change](https://github.com/hongtw/leetcode/tree/master/leetcode/0322.Coin-Change) ![DP](leetcode/img/dp.svg)
+- [516. Longest Palindromic Subsequence](https://github.com/hongtw/coding-life/tree/master/leetcode/0516.Longest-Palindromic-Subsequence) ![DP](leetcode/img/dp.svg)
+- [1143. Longest Common Subsequence](https://github.com/hongtw/leetcode/tree/master/leetcode/1143.Longest-Common-Subsequence) ![DP](leetcode/img/dp.svg)
 
-![Hard](https://img.shields.io/badge/LeetCode-Hard-D9534F.svg)
-![](https://img.shields.io/badge/Done-1-blue)
+![Hard](leetcode/img/hard.svg)
+![](https://img.shields.io/badge/Done-2-blue)
 
 - [41. First Missing Positive](https://github.com/hongtw/leetcode/tree/master/leetcode/0041.First-Missing-Positive)
-- [72. Edit Distance](https://github.com/hongtw/coding-life/tree/master/leetcode/0072.Edit-Distance)
+- [72. Edit Distance](https://github.com/hongtw/coding-life/tree/master/leetcode/0072.Edit-Distance) ![DP](leetcode/img/dp.svg)
