@@ -56,3 +56,4 @@ leetcode practices
 ![](https://img.shields.io/badge/Done-1-blue)
 
 - [41. First Missing Positive](https://github.com/hongtw/leetcode/tree/master/leetcode/0041.First-Missing-Positive)
+- [72. Edit Distance](https://github.com/hongtw/coding-life/tree/master/leetcode/0072.Edit-Distance)
