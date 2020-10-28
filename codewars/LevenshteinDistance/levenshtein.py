@@ -1,17 +1,15 @@
-# Time: 587ms
 def levenshtein(a, b, memo={}):
     if (a, b) in memo:
         return memo[(a, b)]
     if not a or not b:
         return max(len(a), len(b))
-    if a[0] == b[0]:
-        dist = levenshtein(a[1:], b[1:])
-    else:
-        dist = 1 + min(
-            levenshtein(a[1:], b[1:]),  # substitution
-            levenshtein(a[0:], b[1:]),  # insert or delete
-            levenshtein(a[1:], b[0:]),  # insert or delete
-        )
+
+    isNeedSub = int(a[0] != b[0])
+    dist = min(
+        levenshtein(a[1:], b[1:]) + isNeedSub,  # substitution or pass
+        levenshtein(a[0:], b[1:]) + 1,          # insert or delete
+        levenshtein(a[1:], b[0:]) + 1,          # insert or delete
+    )
     memo[(a, b)] = dist
     return dist
 
@@ -37,14 +35,12 @@ def levenshteinDP(a, b):
 
     for i in range(1, la + 1):
         for j in range(1, lb +1):
-            if a[i-1] == b[j-1]:
-                dp[i][j] = dp[i-1][j-1]
-            else:
-                dp[i][j] = 1 + min(
-                    dp[i-1][j-1],
-                    dp[i][j-1],
-                    dp[i-1][j],
-                )
+            isNeedSub = int(a[i-1] != b[j-1])
+            dp[i][j] = min(
+                dp[i-1][j-1] + isNeedSub,
+                dp[i][j-1] + 1,
+                dp[i-1][j] + 1,
+            )
 
     # from pprint import pprint
     # pprint(dp)
