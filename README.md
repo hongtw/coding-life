@@ -32,6 +32,7 @@ leetcode practices
 - [219. Contains Duplicate II](https://github.com/hongtw/leetcode/tree/master/leetcode/0219.Contains-Duplicate-II)
 - [283. Move Zeroes](https://github.com/hongtw/leetcode/tree/master/leetcode/0283.Move-Zeroes)
 - [287. Find The Duplicate Number](https://github.com/hongtw/leetcode/tree/master/leetcode/0287.Find-The-Duplicate-Number)
+- [292. Nim Game](https://github.com/hongtw/coding-life/tree/master/leetcode/0292.Nim-Game)
 - [509. Fibonacci Number](https://github.com/hongtw/leetcode/tree/master/leetcode/0509.Fibonacci-Number)
 - [532. K Diff Pairs In An Array](https://github.com/hongtw/leetcode/tree/master/leetcode/0532.K-Diff-Pairs-In-An-Array)
 - [566. Reshape The Matrix](https://github.com/hongtw/leetcode/tree/master/leetcode/0566.Reshape-The-Matrix)
