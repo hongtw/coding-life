@@ -20,30 +20,21 @@ func buildCipherTable(n int, doEncode bool) (table []int) {
 	arr := make([]int, n*n)
 	base := 0
 	round := 0
-	var r, c int
 	for i := 0; i < n*n; i++ {
-		order := i % 4
-		if order == 0 {
-			r = 0 + round
-			c = (i-base)/4 + round
-		} else if order == 1 {
-			r = (i-base)/4 + round
-			c = n - 1 - round
-		} else if order == 2 {
-			r = n - 1 - round
-			c = n - (i-base)/4 - 1 - round
-		} else {
-			r = n - (i-base)/4 - 1 - round
-			c = 0 + round
-			if r == round+1 {
-				round++
-				base = i + 1
-			}
+		sin := int(math.Round(math.Sin(math.Pi / 2 * float64(i))))
+		cos := int(math.Round(math.Cos(math.Pi / 2 * float64(i))))
+		row := (sin+cos)*round + sin*(i-base)/4 + n*(1-sin-cos)/2 + (sin+cos-1)/2
+		col := (cos-sin)*round + cos*(i-base)/4 + n*(sin-cos+1)/2 + (cos-sin-1)/2
+		position := row*n + col
+		// fmt.Println("*****", i, sin, cos, row, col)
+		if i%4 == 3 && row == round+1 {
+			round++
+			base = i + 1
 		}
 		if doEncode {
-			arr[r*n+c] = i
+			arr[position] = i
 		} else {
-			arr[i] = r*n + c
+			arr[i] = position
 		}
 
 	}
@@ -85,6 +76,7 @@ func main() {
 	fmt.Println(decode("Rntodomiimuea  m"))
 
 	buildCipherTable(3, true)
+	buildCipherTable(3, false)
 	buildCipherTable(4, true)
 	buildCipherTable(5, true)
 
