@@ -7,33 +7,33 @@ import (
 )
 
 type colorChannels struct {
-	collector map[rune]string
-	mux       sync.Mutex
+	channel map[rune]string
+	mux     sync.Mutex
 }
 
 func (cc *colorChannels) output() string {
-	return cc.collector['r'] + cc.collector['g'] + cc.collector['b']
+	return cc.channel['r'] + cc.channel['g'] + cc.channel['b']
 }
 
-func convert(color rune, value int, wg *sync.WaitGroup, cc *colorChannels) {
+func process(color rune, value int, wg *sync.WaitGroup, cc *colorChannels) {
 	if value > 255 {
 		value = 255
 	} else if value < 0 {
 		value = 0
 	}
 	cc.mux.Lock()
-	cc.collector[color] = fmt.Sprintf("%02X", value)
+	cc.channel[color] = fmt.Sprintf("%02X", value)
 	cc.mux.Unlock()
 	wg.Done()
 }
 
 func rgb(r, g, b int) string {
-	cc := &colorChannels{collector: map[rune]string{}}
-	wg := sync.WaitGroup{}
+	cc := &colorChannels{channel: map[rune]string{}}
+	wg := &sync.WaitGroup{}
 	wg.Add(3)
-	go convert('r', r, &wg, cc)
-	go convert('g', g, &wg, cc)
-	go convert('b', b, &wg, cc)
+	go process('r', r, wg, cc)
+	go process('g', g, wg, cc)
+	go process('b', b, wg, cc)
 	wg.Wait()
 	return cc.output()
 }
