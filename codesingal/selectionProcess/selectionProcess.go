@@ -33,19 +33,38 @@ import (
 // TextDir : Shoud rewrite it to "/root/devops" when submitting to codesignal
 var TextDir string = "./root/devops"
 
-type Subject string
-type Subjects map[string]Students
-
-func (sb Subjects) sortAll() (index []string) {
-	// https://stackoverflow.com/questions/23330781/sort-go-map-values-by-keys
-	for k, students := range sb {
-		students.sortByScore()
-		index = append(index, k)
+func check(err error) {
+	if err != nil {
+		log.Fatal(err)
+		panic(err)
 	}
-	sort.Strings(index)
+}
+
+// SubjectManger has subject as key and point of Students as value
+type SubjectManger map[string]Students
+
+// SubjectStudents has subject name and students
+type SubjectStudents struct {
+	Name     string
+	Students Students
+}
+
+func (sm *SubjectManger) feed(ss *SubjectStudents) {
+	subName := ss.Name
+	students := ss.Students
+	(*sm)[subName] = append((*sm)[subName], students...)
+}
+
+func (sm *SubjectManger) sortAll() (keys []string) {
+	for k, students := range *sm {
+		students.sortByScore()
+		keys = append(keys, k)
+	}
+	sort.Strings(keys)
 	return
 }
 
+// Student contains student's basic information
 type Student struct {
 	Name  string
 	Score int
@@ -56,15 +75,16 @@ func (s Student) String() string {
 	return s.Name
 }
 
+// Students contains many student
 type Students []Student
 
-func (st *Students) sortByScore() {
+func (sts *Students) sortByScore() {
 	// descending
-	sort.Slice(*st, func(i, j int) bool { return (*st)[i].Score > (*st)[j].Score })
+	sort.Slice(*sts, func(i, j int) bool { return (*sts)[i].Score > (*sts)[j].Score })
 }
 
+// Head return Top n students
 func (sts Students) Head(count int) Students {
-	// descending
 	if leng := len(sts); count > leng {
 		count = leng
 	}
@@ -80,17 +100,12 @@ func (sts Students) String() string {
 	return output
 }
 
-func getStudents(filepath string) (students Students) {
+// ImportStudents import students and its score from file
+func ImportStudents(filepath string) (students Students) {
 	// Read a file line by line: https://golangbot.com/read-files/
 	f, err := os.Open(filepath)
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer func() {
-		if err = f.Close(); err != nil {
-			log.Fatal(err)
-		}
-	}()
+	check(err)
+	defer func() { err = f.Close(); check(err) }()
 	s := bufio.NewScanner(f)
 	for s.Scan() {
 		line := s.Text()
@@ -102,30 +117,34 @@ func getStudents(filepath string) (students Students) {
 	return students
 }
 
-func visit(subjectsAll *Subjects) filepath.WalkFunc {
+func visit(count *int, ch chan *SubjectStudents) filepath.WalkFunc {
 	// https://flaviocopes.com/go-list-files/
 	return func(path string, info os.FileInfo, err error) error {
-		if err != nil {
-			log.Fatal(err)
-		}
+		check(err)
 		if !info.IsDir() {
-			subName := strings.TrimSuffix(info.Name(), ".txt")
-			if _, isOK := (*subjectsAll)[subName]; !isOK {
-				(*subjectsAll)[subName] = Students{}
-			}
-			(*subjectsAll)[subName] = append((*subjectsAll)[subName], getStudents(path)...)
+			*count++
+			go func() {
+				subName := strings.TrimSuffix(info.Name(), ".txt")
+				students := ImportStudents(path)
+				ch <- &SubjectStudents{subName, students}
+			}()
 		}
 		return nil
 	}
 }
 
 func main() {
-	subjectsAll := Subjects{}
-	filepath.Walk(TextDir, visit(&subjectsAll))
-	sortedSubjects := subjectsAll.sortAll()
+	sm := SubjectManger{}
+	count := 0
+	ch := make(chan *SubjectStudents)
+	filepath.Walk(TextDir, visit(&count, ch))
+	for i := 0; i < count; i++ {
+		sm.feed(<-ch)
+	}
+	sortedSubjects := sm.sortAll()
 	output := ""
 	for _, subject := range sortedSubjects {
-		topStudents := subjectsAll[subject].Head(4)
+		topStudents := sm[subject].Head(4)
 		output += fmt.Sprintf("%v:\n%v\n", subject, topStudents)
 	}
 
