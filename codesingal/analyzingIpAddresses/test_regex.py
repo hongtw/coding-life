@@ -24,9 +24,12 @@ import re
 pattern0_255 = re.compile(r"1\d\d|2[0-4]\d|25[0-5]|\d\d|\d")
 assert all([pattern0_255.match(str(n)) for n in range(256)])
 
-patten = re.compile(r"((1\d\d|2[0-4]\d|25[0-5]|\d\d|\d)\.){3}(1\d\d|2[0-4]\d|25[0-5]|\d\d|\d)")
+patten = re.compile(r"\b((1\d\d|2[0-4]\d|25[0-5]|\d\d|\d)\.){3}(1\d\d|2[0-4]\d|25[0-5]|\d\d|\d)\b")
 
 for ip in ips:
-    assert patten.match(ip) is not None, f"{ip} fail"
+    assert patten.search(ip) is not None, f"{ip} should match"
+
+for ip in ["77.255.255.2555", "0.1111.2.2", "1111.2.3.4"]:
+    assert patten.search(ip) is None, f"{ip} should not match"
 
 print("Test Done")
