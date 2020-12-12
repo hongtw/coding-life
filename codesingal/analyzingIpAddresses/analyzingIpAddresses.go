@@ -16,8 +16,10 @@ import (
 	"sync"
 )
 
+var uint8Pat = `(1\d\d|2[0-4]\d|25[0-5]|\d\d?)`
+
 // IPPattern is regex for valid IP
-var IPPattern = regexp.MustCompile(`\b((1\d\d|2[0-4]\d|25[0-5]|\d\d|\d)\.){3}(1\d\d|2[0-4]\d|25[0-5]|\d\d|\d)\b`)
+var IPPattern = regexp.MustCompile(fmt.Sprintf(`(%[1]v\.){3}%[1]v`, uint8Pat))
 
 func visitAllFiles(root string) <-chan []string {
 	ch := make(chan []string)

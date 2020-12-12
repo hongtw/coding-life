@@ -21,10 +21,10 @@ ips = [
 
 import re
 
-pattern0_255 = re.compile(r"1\d\d|2[0-4]\d|25[0-5]|\d\d|\d")
-assert all([pattern0_255.match(str(n)) for n in range(256)])
+uint8 = re.compile(r"1\d\d|2[0-4]\d|25[0-5]|\d\d?")
+assert all([uint8.match(str(n)) for n in range(256)])
 
-patten = re.compile(r"\b((1\d\d|2[0-4]\d|25[0-5]|\d\d|\d)\.){3}(1\d\d|2[0-4]\d|25[0-5]|\d\d|\d)\b")
+patten = re.compile(r"\b((1\d\d|2[0-4]\d|25[0-5]|\d\d|\d)\.){3}(1\d\d|2[0-4]\d|25[0-5]|\d\d?)\b")
 
 for ip in ips:
     assert patten.search(ip) is not None, f"{ip} should match"
