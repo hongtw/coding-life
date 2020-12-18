@@ -9,74 +9,53 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
-	"os"
 	"path/filepath"
 	"regexp"
 	"sort"
-	"strings"
 	"sync"
 )
 
-type targetFile struct {
-	name string
-	num  int
-}
-
-func (tf targetFile) String() string {
-	return fmt.Sprintf("%v %v", tf.name, tf.num)
-}
-
 type Counter map[string]int
 
-func (c *Counter) getSorted() (tfs []targetFile) {
-	for filename, num := range *c {
-		tfs = append(tfs, targetFile{filename, num})
+func (c *Counter) getSorted() []string {
+	gps := make([]string, 0, len(*c))
+	for grepped := range *c {
+		gps = append(gps, grepped)
 	}
-	sort.Slice(tfs, func(i, j int) bool {
-		return tfs[i].num > tfs[j].num ||
-			(tfs[i].num == tfs[j].num && tfs[i].name < tfs[j].name)
+	sort.Slice(gps, func(i, j int) bool {
+		return (*c)[gps[i]] > (*c)[gps[j]] ||
+			((*c)[gps[i]] == (*c)[gps[j]] && gps[i] < gps[j])
 	})
-	return tfs
+	return gps
 }
 
 // ErrorPattern is regex for error log
 var ErrorPattern = regexp.MustCompile(`\d+\|ERROR\|([\w.-]+)\|`)
 
-func visitAllFiles(root string) <-chan []string {
-	ch := make(chan []string)
-	go func() {
-		var wg sync.WaitGroup
-		filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
-			if !strings.HasSuffix(path, ".log") {
-				return nil
-			}
-			wg.Add(1)
-			go func() {
-				data, _ := ioutil.ReadFile(path)
-				for _, matched := range ErrorPattern.
-					FindAllStringSubmatch(string(data), -1) {
-					ch <- matched
-				}
-				wg.Done()
-			}()
-			return nil
-		})
-
-		go func() {
-			wg.Wait()
-			close(ch)
-		}()
-	}()
-	return ch
+func grepError(log string, ch chan<- string, wg *sync.WaitGroup) {
+	defer wg.Done()
+	data, _ := ioutil.ReadFile(log)
+	for _, matched := range ErrorPattern.
+		FindAllStringSubmatch(string(data), -1) {
+		ch <- matched[1]
+	}
 }
 
 func main() {
-	ch := visitAllFiles("./root")
+	allLogs, _ := filepath.Glob("./root/devops/logs/*.log")
+	ch := make(chan string)
+	var wg sync.WaitGroup
+	wg.Add(len(allLogs))
+	for _, log := range allLogs {
+		go grepError(log, ch, &wg)
+	}
+	go func() { wg.Wait(); close(ch) }()
+
 	counter := Counter{}
-	for matched := range ch {
-		counter[matched[1]]++
+	for grepped := range ch {
+		counter[grepped]++
 	}
 	for _, file := range counter.getSorted() {
-		fmt.Println(file)
+		fmt.Println(file, counter[file])
 	}
 }
