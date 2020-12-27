@@ -1,6 +1,14 @@
 // https://app.codesignal.com/challenge/L9YzWMLMJbwSTGRkk
 
-// Repetition (greedy and non-greedy) https://yourbasic.org/golang/regexp-cheat-sheet/#repetition-greedy-and-non-greedy
+// https://yourbasic.org/golang/regexp-cheat-sheet/#repetition-greedy-and-non-greedy
+// Choice and grouping
+// Regexp	Meaning
+// xy	    x followed by y
+// x|y	    x or y, prefer x
+// xy|z	    same as (xy)|z
+// xy*	    same as x(y*)
+
+// Repetition (greedy and non-greedy)
 // Regexp	Meaning
 // x*	    zero or more x, prefer more
 // x*?	    prefer fewer (non-greedy)
@@ -31,7 +39,7 @@ func main() {
 	invites := readFile(root + "invite.info")
 	bans := readFile(root + "ban.info")
 	pattern := regexp.MustCompile(fmt.Sprintf(
-		`/(%v)?((%v).*)??/\w+\.info$`,
+		`/((%v)|((%v).*))/\w+\.info$`, // another syntax:  `/(%v)?((%v).*)??/\w+\.info$`,
 		strings.Join(bans, "|"),
 		strings.Join(invites, "|"),
 	))
