@@ -31,7 +31,7 @@ func main() {
 	invites := readFile(root + "invite.info")
 	bans := readFile(root + "ban.info")
 	pattern := regexp.MustCompile(fmt.Sprintf(
-		`/(%v)*((%v).*)??/\w+\.info$`,
+		`/(%v)?((%v).*)??/\w+\.info$`,
 		strings.Join(bans, "|"),
 		strings.Join(invites, "|"),
 	))
