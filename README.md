@@ -44,6 +44,7 @@ leetcode practices
 - [11. Container With Most Water](https://github.com/hongtw/leetcode/tree/master/leetcode/0011.Container-With-Most-Water)
 - [15. 3Sum](https://github.com/hongtw/leetcode/tree/master/leetcode/0015.3sum)
 - [16. 3sum Closest](https://github.com/hongtw/leetcode/tree/master/leetcode/0016.3sum-Closest)
+- [38. Count And Say](https://github.com/hongtw/leetcode/tree/master/leetcode/0038.Count-And-Say)
 - [39. Combination Sum](https://github.com/hongtw/leetcode/tree/master/leetcode/0039.Combination-Sum)
 - [40. Combination Sum II](https://github.com/hongtw/leetcode/tree/master/leetcode/0040.Combination-Sum-II)
 - [62. Unique Paths](https://github.com/hongtw/leetcode/tree/master/leetcode/0062.Unique-Paths)
